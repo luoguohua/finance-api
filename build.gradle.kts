@@ -5,7 +5,7 @@ plugins {
 }
 
 val versions = mapOf(
-		"lombok" to "1.18.26",
+		"lombok" to "1.18.30",
 		"springBoot" to "3.2.5",
 )
 
@@ -38,6 +38,9 @@ subprojects {
 		implementation("org.projectlombok:lombok:${versions["lombok"]}")
 		annotationProcessor("org.projectlombok:lombok:${versions["lombok"]}")
 		implementation("org.springframework.boot:spring-boot-starter-web")
+		implementation("org.springframework.boot:spring-boot-starter-data-jpa") // JPA 支持
+		implementation("org.springframework.boot:spring-boot-starter-jdbc") // JDBC 支持
+		implementation("com.mysql:mysql-connector-j:8.3.0")
 	}
 }
 

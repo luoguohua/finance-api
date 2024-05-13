@@ -8,7 +8,7 @@ spring:
       idle-timeout: 30000 # ??????????
       connection-timeout: 20000 # ??????????
       max-lifetime: 1800000 # ????????
-    url: jdbc:mysql://192.168.14.2:3306/finance
+    url: jdbc:mysql://192.168.14.2:3306/finance-sec
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver

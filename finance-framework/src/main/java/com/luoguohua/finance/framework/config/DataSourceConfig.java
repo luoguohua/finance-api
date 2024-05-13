@@ -15,6 +15,7 @@ import javax.sql.DataSource;
  * Content:
  */
 //@Configuration
+@Deprecated
 public class DataSourceConfig {
 
     @Primary
