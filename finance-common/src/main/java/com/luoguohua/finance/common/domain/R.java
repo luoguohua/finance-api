@@ -32,6 +32,7 @@ public class R<T> implements Serializable {
     private String msg;
 
 
+
     public Integer getCode() {
         return code;
     }
@@ -67,6 +68,10 @@ public class R<T> implements Serializable {
      */
     public static <T> R<T> error(R<?> result) {
         return error(result.getCode(), result.getMsg());
+    }
+
+    public static <T> R<T> error(HttpStatus httpStatus, String message) {
+        return error(httpStatus.value(),message);
     }
 
     public static <T> R<T> error(int code, String message) {

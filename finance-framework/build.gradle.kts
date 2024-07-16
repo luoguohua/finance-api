@@ -10,6 +10,5 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-security")
     implementation(project(":finance-common")) // 依赖 common 模块
 }

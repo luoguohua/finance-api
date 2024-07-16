@@ -37,10 +37,19 @@ subprojects {
 	dependencies {
 		implementation("org.projectlombok:lombok:${versions["lombok"]}")
 		annotationProcessor("org.projectlombok:lombok:${versions["lombok"]}")
+		implementation("cn.hutool:hutool-all:5.8.25")
+		implementation("org.mapstruct:mapstruct:1.5.5.Final")
 		implementation("org.springframework.boot:spring-boot-starter-web")
 		implementation("org.springframework.boot:spring-boot-starter-data-jpa") // JPA 支持
 		implementation("org.springframework.boot:spring-boot-starter-jdbc") // JDBC 支持
-		implementation("com.mysql:mysql-connector-j:8.3.0")
+		implementation("org.springframework.boot:spring-boot-starter-security")
+		implementation("org.springframework.boot:spring-boot-starter-validation") // validation 支持
+		implementation("org.springframework.boot:spring-boot-starter-data-redis") // redis 支持
+		implementation("org.postgresql:postgresql:42.4.4") // postgresql 支持
+		implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0") // springdoc
 	}
 }
 
+tasks.withType(JavaCompile::class.java){
+	options.encoding="UTF-8"
+}

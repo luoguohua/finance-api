@@ -2,6 +2,7 @@ package com.luoguohua.finance.admin.service;
 
 import com.luoguohua.finance.admin.repository.SysUserRepository;
 import com.luoguohua.finance.admin.domain.po.SysUser;
+import com.luoguohua.finance.common.exception.BusinessException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +27,20 @@ public class SysUserService {
 
     public Optional<SysUser> getSysUserById(Long id) {
         return userRepository.findById(id);
+    }
+
+
+    /**
+     * 根据用户名称获取用户
+     * @param username
+     * @return
+     */
+    public SysUser getUserByUsername(String username){
+        Optional<SysUser> user = userRepository.findByUsername(username);
+        if(user.isPresent()){
+            return user.get();
+        }
+        throw new BusinessException("用户信息不存在");
     }
 
     public SysUser createSysUser(SysUser user) {
